@@ -1,0 +1,30 @@
+const express = require('express');
+const router= express.Router();
+const mongoose = require('mongoose');
+const User = require('../models/user');
+const db = "mongodb+srv://mean:mean@123@mean-users-9nwkz.mongodb.net/test?retryWrites=true";
+
+mongoose.Promise = global.Promise;
+
+mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
+    if(err){
+        console.error("Error! " + err);
+    } else {
+        console.log('connected')
+    }
+});
+
+
+//get api 
+router.get('/users', function(req, res){
+    console.log('Get request for all users');
+    User.find({})
+    .exec(function(err, users){
+        if (err){
+            console.log("Error retrieving users");
+        }else {
+            res.json(users);
+        }
+    });
+});
+module.exports = router;

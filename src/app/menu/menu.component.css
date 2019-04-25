@@ -1,0 +1,31 @@
+.menu-bg {
+    background: #fff;
+    box-shadow: 0px 0px 10px #0000008c;
+}
+
+.menu-bg ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu-bg ul li {
+    list-style: none;
+}
+.menu-bg ul li a {
+    text-align: center;
+    display: block;
+    padding: 2em;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #434343
+}
+
+.menu-bg ul li a span:first-child {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.active-link {
+    background:#0090ff;
+    color: #fff !important;
+}
