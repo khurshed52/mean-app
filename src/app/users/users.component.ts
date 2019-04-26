@@ -9,12 +9,27 @@ import { Observable } from 'rxjs';
 })
 export class UsersComponent implements OnInit {
   users:any;
-  constructor( private user: UsersService) { }
+  selectedUser: Users;
+  private hiddenewUser: boolean = true;
+  constructor( private _user: UsersService) { }
 
   ngOnInit() {
-    this.user.getUsers().subscribe(  
+    this._user.getUsers().subscribe(  
       user => this.users = user,
     );
   }
 
+  onSubmitAddUser(user: Users) {
+    this._user.addUser(user)
+      .subscribe(resNewUser => {
+        this.users.push(resNewUser);
+        this.hiddenewUser = true;
+        this.selectedUser = resNewUser;
+      });
+    }
+
+
+    newUser() {
+      this.hiddenewUser = false;
+    }
 }

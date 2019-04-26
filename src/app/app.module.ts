@@ -9,6 +9,7 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { UsersComponent } from './users/users.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,3 +14,103 @@ body {
     font-size: 1em;
     text-transform: uppercase;
 }
+
+#weekSlider {
+    margin-top: 1.5em
+}
+
+.owl-next, .owl-prev {
+    background:none !important;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    top: -27%;
+}
+
+
+.owl-next {
+    right: 40%;
+}
+
+.owl-prev {
+    left: 40%;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background: none !important;
+    color: #3598db  !important;
+    text-decoration: none;
+}
+
+.primary {
+    background: #22a6b3;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1em;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    padding: 5px 16px;
+}
+
+.primary:hover {
+    background: #1b8691;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2)
+}
+
+.modal-content {
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0!important;
+    outline: 0;
+    -webkit-box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);
+    box-shadow: 0 7px 8px -4px rgba(0,0,0,.2), 0 13px 19px 2px rgba(0,0,0,.14), 0 5px 24px 4px rgba(0,0,0,.12);
+    border: 0!important;
+}
+
+.select-dropdown {
+    position: relative;
+    width: auto;
+    float: left;
+    max-width: 100%;
+}
+
+.select-dropdown select {
+    font-size: 1rem;
+    max-width: 100%;
+    padding: 7px 24px 7px 8px;
+    border: none;
+    background-color: #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: bold;
+    box-shadow: 0 0 5px #00000029;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.m-top {
+    align-items: center;
+    margin-top: 5px
+}
+
+.select-dropdown:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #aaa;
+}

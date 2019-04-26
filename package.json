@@ -29,6 +29,7 @@
     "express": "^4.16.4",
     "jquery": "^3.4.0",
     "mongoose": "^5.5.3",
+    "owl.carousel": "^2.3.4",
     "reset-css": "^4.0.1",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.5.1",

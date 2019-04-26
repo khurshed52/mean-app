@@ -25,9 +25,15 @@
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/reset-css/reset.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+               "node_modules/jquery/dist/jquery.min.js",
+               "node_modules/bootstrap/dist/js/bootstrap.js",
+               "node_modules/owl.carousel/dist/owl.carousel.js"
+            ]
           },
           "configurations": {
             "production": {
