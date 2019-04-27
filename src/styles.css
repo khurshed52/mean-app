@@ -114,3 +114,16 @@ body {
     border-right: 5px solid transparent;
     border-top: 5px solid #aaa;
 }
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }

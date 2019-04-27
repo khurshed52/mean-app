@@ -46,4 +46,18 @@ router.post('/users', function(req, res){
         }
     });
 });
+
+// delete api
+
+router.delete('/users/:id', function(req, res){
+    console.log('Deleting an user');
+    User.findByIdAndRemove(req.params.id, function(err, deletedUser){
+        if(err){
+            res.send("Error deleting user");
+        }else{
+            res.json(deletedUser);
+        }
+    });
+});
+
 module.exports = router;
