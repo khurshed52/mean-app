@@ -9,11 +9,13 @@ import 'rxjs/add/operator/map';
   providedIn: 'root'
 })
 export class UsersService {
+  users: Users[];
+
 
   constructor(private http: HttpClient) { }
 
-  private get_url = "http://localhost:4000/api/users";
-  private del_url = "http://localhost:4000/api/users/";
+  private get_url = "api/users";
+  private del_url = "/api/users/";
   //get user
   getUsers() {
     return this.http.get(this.get_url);
@@ -37,11 +39,22 @@ export class UsersService {
     return this.http.post(this.get_url, user);
   }
 
-//delete contact 
-
-
+//delete users
 deleteUser(id){
   return this.http.delete(this.del_url+id)
+}
+
+getUsersById(id) {
+  return this.http.get(this.del_url+id);
+}
+
+
+//update users
+updateUsers(user: Users) {
+  let headers = new Headers({ 'Content-Type': 'application/json' });
+  let options = new RequestOptions({ headers: headers });
+  return this.http.put(this.del_url + user._id, JSON.stringify(user))
+    .map((response: Response) => response.json());
 }
 
 }

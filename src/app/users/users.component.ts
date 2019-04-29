@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
-
+declare var Swal:any
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -20,7 +20,13 @@ export class UsersComponent implements OnInit {
   createForm: FormGroup;
   private hiddenewUser: boolean = false;
 
-  constructor(private _user: UsersService, private fb: FormBuilder, private router: Router, private snack: MatSnackBar, private saveSwal: SweetAlert2Module) {
+  constructor(
+    private _user: UsersService, 
+    private fb: FormBuilder, 
+    private router: Router,
+    private snack: MatSnackBar, 
+    private saveSwal: SweetAlert2Module
+    ) {
     this.createForm = this.fb.group({
       name: ['', Validators.required],
       designation: '',
@@ -53,18 +59,38 @@ export class UsersComponent implements OnInit {
   // delete user
 
   deleteUser(id: any) {
-    let videoArray = this.users;
-    this._user.deleteUser(id)
-      .subscribe(resDeletedVideo => {
-        for (let i = 0; i < videoArray.length; i++) {
-          if (videoArray[i]._id === id) {
-            videoArray.splice(i, 1);
-          }
+      //swal
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+          let userArray = this.users;
+          this._user.deleteUser(id)
+            .subscribe(data => {
+              for (let i = 0; i < userArray.length; i++) {
+                if (userArray[i]._id === id) {
+                  userArray.splice(i, 1);
+                }
+              }
+            });
+          Swal.fire(
+            'Deleted!',
+            'Your file has been deleted.',
+            'success'
+          )
         }
-      });
-      this.snack.open('user deleted successfully', 'OK', {
-        duration: 3000
-      });
+      })
   };
+
+//edit users
+editUser(id) {
+  this.router.navigate([`/edit/${id}`]);
+}
 
 }

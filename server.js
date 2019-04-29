@@ -11,8 +11,7 @@ app.use(bodyParser.json());
 
 app.use('/api', api);
 
-app.use(express.static(__dirname + '/dist/mean/index.html'));
-app.get('*', (req, res) =>res.sendFile(path.join(__dirname)));
+app.get('*', (req, res) =>res.sendFile(path.join(__dirname, 'dist/index.html')));
 
 app.listen(port, function(){
     console.log("Server running on localhost:" + port);

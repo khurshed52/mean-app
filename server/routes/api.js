@@ -48,7 +48,6 @@ router.post('/users', function(req, res){
 });
 
 // delete api
-
 router.delete('/users/:id', function(req, res){
     console.log('Deleting an user');
     User.findByIdAndRemove(req.params.id, function(err, deletedUser){
@@ -58,6 +57,28 @@ router.delete('/users/:id', function(req, res){
             res.json(deletedUser);
         }
     });
+});
+
+//edit api 
+
+router.put('/users/:id', function(req, res){
+    console.log('Update a user');
+    User.findByIdAndUpdate(req.params.id,
+    {
+        $set: {name: req.body.name, designation: req.body.designation, email: req.body.email, phone: req.body.phone}
+    },
+    {
+        new: true
+    },
+    function(err, updatedUser){
+        if(err){
+            res.send("Error updating user");
+        }else{
+            res.json(updatedUser);
+        }
+    }
+
+    );
 });
 
 module.exports = router;

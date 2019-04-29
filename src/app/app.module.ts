@@ -15,6 +15,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import {MatButtonModule, MatInputModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MenuComponent,
     HomeComponent,
     GalleryComponent,
-    UsersComponent
+    UsersComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

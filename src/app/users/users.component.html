@@ -1,15 +1,17 @@
+<div class="float-right">
+  <button mat-raised-button color="primary" data-toggle="modal" data-target="#addUserModal">Add User </button>
+</div>
+<div class="clearfix"> </div>
+
 <div *ngFor="let user of users">
     <p> {{user.name}} </p>
     <p> {{user.designation}} </p>
     <p> {{user.email}} </p>
     <p> {{user.phone}} </p>
-    <button mat-button color="warn" (click)="deleteUser(user._id)">Delete</button>
+    <button mat-raised-button color="warn"  (click)="deleteUser(user._id)">Delete</button>
+    <button mat-raised-button color="primary"  (click)="editUser(user._id)">Edit</button>
 </div> 
 
-<div class="float-right">
-  <button mat-raised-button color="accent" data-toggle="modal" data-target="#addUserModal">Add User </button>
-</div>
-<div class="clearfix"> </div>
 
 <!-- <div>
   <ngx-datatable class="material" [rows]="users" [columns]="[{name:'name'},{name:'designation'},{name:'email'}, {name:'phone'}]"
@@ -32,23 +34,23 @@
         <div class="example-container">
           <form [formGroup]="createForm" class="create-form">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="name" formControlName="name" #name>
+              <input matInput placeholder="Name" formControlName="name" #name>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="designation" formControlName="designation" #designation>
+              <input matInput placeholder="Designation" formControlName="designation" #designation>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="email" formControlName="email" #email>
+              <input matInput placeholder="Email" formControlName="email" #email>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="phone" formControlName="phone" #phone>
+              <input matInput placeholder="Phone" formControlName="phone" #phone>
             </mat-form-field>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="primary" data-dismiss="modal">Close</button>
-        <button type="submit" (click)="addUser(name.value, designation.value, email.value, phone.value)" class="primary" data-dismiss="modal">Save</button>
+        <button type="button" mat-raised-button color="accent" data-dismiss="modal">Close</button>
+        <button type="submit" (click)="addUser(name.value, designation.value, email.value, phone.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary" data-dismiss="modal">Save</button>
       </div>
     </div>
   </div>
