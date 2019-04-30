@@ -23,6 +23,46 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./src/app/album.service.ts":
+/*!**********************************!*\
+  !*** ./src/app/album.service.ts ***!
+  \**********************************/
+/*! exports provided: AlbumService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlbumService", function() { return AlbumService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/add/operator/map */ "./node_modules/rxjs-compat/_esm5/add/operator/map.js");
+
+
+
+
+
+var AlbumService = /** @class */ (function () {
+    function AlbumService(http) {
+        this.http = http;
+        this.get_url = "/api/albums";
+    }
+    AlbumService.prototype.getAlbums = function () {
+        return this.http.get(this.get_url);
+    };
+    AlbumService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], AlbumService);
+    return AlbumService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -88,7 +128,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-md-2\">\n      <app-menu> </app-menu>\n    </div>\n    <div class=\"col-md-10\">\n       <router-outlet> </router-outlet>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-md-2\">\r\n      <app-menu> </app-menu>\r\n    </div>\r\n    <div class=\"col-md-10\">\r\n       <router-outlet> </router-outlet>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -228,7 +268,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<form [formGroup]=\"updateForm\" class=\"create-form\">\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Name\" formControlName=\"name\" #name>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Designation\" formControlName=\"designation\" #designation>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Email\" formControlName=\"email\" #email>\n  </mat-form-field>\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Phone\" formControlName=\"phone\" #phone>\n  </mat-form-field>\n  <button type=\"submit\" (click)=\"updateUser(name.value, designation.value, email.value, phone.value)\" [disabled]=\"updateForm.pristine || updateForm.invalid\" mat-raised-button color=\"primary\">Save</button>\n</form>\n"
+module.exports = "<form [formGroup]=\"updateForm\" class=\"create-form\">\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Name\" formControlName=\"name\" #name>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Designation\" formControlName=\"designation\" #designation>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Email\" formControlName=\"email\" #email>\r\n  </mat-form-field>\r\n  <mat-form-field class=\"example-full-width\">\r\n    <input matInput placeholder=\"Phone\" formControlName=\"phone\" #phone>\r\n  </mat-form-field>\r\n  <button type=\"submit\" (click)=\"updateUser(name.value, designation.value, email.value, phone.value)\" [disabled]=\"updateForm.pristine || updateForm.invalid\" mat-raised-button color=\"primary\">Save</button>\r\n</form>\r\n"
 
 /***/ }),
 
@@ -294,7 +334,7 @@ var EditComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2dhbGxlcnkvZ2FsbGVyeS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2dhbGxlcnkvZ2FsbGVyeS5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -305,7 +345,7 @@ module.exports = "\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZX
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row justify-content-between\" style=\"margin-top:2em\">\n  <div class=\"select-dropdown\">\n    <select>\n      <option value=\"School\" selected=\"\">School</option>\n      <option value=\"Curriculum\">Curriculum</option>\n      <option value=\"Category\">Category</option>\n      <option value=\"Market Segment\">Market Segment</option>\n      <option value=\"Subject/Area\">Subject/Area</option>\n      <option value=\"License Type\">License Type</option>\n  </select>\n  </div>\n  <div class=\"m-top\">\n    <a href=\"javascript:;\" data-toggle=\"modal\" data-target=\"#addModal\" class=\"main-btn\"> <i class=\"fas fa-plus-circle\"></i> Add </a>\n  </div>\n</div>\n<div style=\"margin-top:2em\">\n  <div class=\"text-center\"> Week </div>\n  <div class=\"owl-carousel owl-theme\" id=\"weekSlider\">\n    <div class=\"item\">\n      <table class=\"table table-bordered\">\n        <thead>\n          <tr>\n            <th scope=\"col\">#</th>\n            <th scope=\"col\">First</th>\n            <th scope=\"col\">Last</th>\n            <th scope=\"col\">Handle</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <th scope=\"row\">1</th>\n            <td>Mark</td>\n            <td>Otto</td>\n            <td>@mdo</td>\n          </tr>\n          <tr>\n            <th scope=\"row\">2</th>\n            <td>Jacob</td>\n            <td>Thornton</td>\n            <td>@fat</td>\n          </tr>\n          <tr>\n            <th scope=\"row\">3</th>\n            <td colspan=\"2\">Larry the Bird</td>\n            <td>@twitter</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <div class=\"item\">\n      <table class=\"table table-bordered\">\n        <thead>\n          <tr>\n            <th scope=\"col\">#</th>\n            <th scope=\"col\">First</th>\n            <th scope=\"col\">Last</th>\n            <th scope=\"col\">Handle</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <th scope=\"row\">1</th>\n            <td>Mark</td>\n            <td>Otto</td>\n            <td>@mdo</td>\n          </tr>\n          <tr>\n            <th scope=\"row\">2</th>\n            <td>Jacob</td>\n            <td>Thornton</td>\n            <td>@fat</td>\n          </tr>\n          <tr>\n            <th scope=\"row\">3</th>\n            <td colspan=\"2\">Larry the Bird</td>\n            <td>@twitter</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n    <div class=\"item\">\n      <table class=\"table table-bordered\">\n        <thead>\n          <tr>\n            <th scope=\"col\">#</th>\n            <th scope=\"col\">First</th>\n            <th scope=\"col\">Last</th>\n            <th scope=\"col\">Handle</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <th scope=\"row\">1</th>\n            <td>Mark</td>\n            <td>Otto</td>\n            <td>@mdo</td>\n          </tr>\n          <tr>\n            <th scope=\"row\">2</th>\n            <td>Jacob</td>\n            <td>Thornton</td>\n            <td>@fat</td>\n          </tr>\n          <tr>\n            <th scope=\"row\">3</th>\n            <td colspan=\"2\">Larry the Bird</td>\n            <td>@twitter</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>\n\n<!--modal-->\n<div class=\"modal fade\" id=\"addModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n      <div class=\"modal-content\">\n          <div class=\"modal-header\"> \n              <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                  <span aria-hidden=\"true\">×</span>\n              </button>\n          </div>\n          <div class=\"modal-body\">\n              put content here \n          </div>\n          <div class=\"modal-footer\">\n              <button type=\"button\" class=\"main-btn\" data-dismiss=\"modal\">Close</button>\n          </div>\n      </div>\n  </div>\n</div>"
+module.exports = "<div *ngFor=\"let album of albums\">\r\n  <p> {{album.title}}</p>\r\n</div>"
 
 /***/ }),
 
@@ -321,46 +361,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GalleryComponent", function() { return GalleryComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _album_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../album.service */ "./src/app/album.service.ts");
+
 
 
 var GalleryComponent = /** @class */ (function () {
-    function GalleryComponent() {
+    function GalleryComponent(_album) {
+        this._album = _album;
     }
     GalleryComponent.prototype.ngOnInit = function () {
-        $('#weekSlider').owlCarousel({
-            loop: false,
-            dots: false,
-            responsiveClass: true,
-            autoplay: false,
-            navText: [
-                '<i class="fas fa-chevron-left" aria-hidden="true"></i>',
-                '<i class="fas fa-chevron-right" aria-hidden="true"></i>'
-            ],
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true,
-                    dots: false
-                },
-                600: {
-                    items: 1,
-                    nav: false
-                },
-                1000: {
-                    items: 1,
-                    nav: true,
-                    loop: false
-                }
-            }
-        });
+        var _this = this;
+        this._album.getAlbums().subscribe(function (album) { return _this.albums = album; });
     };
     GalleryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-gallery',
             template: __webpack_require__(/*! ./gallery.component.html */ "./src/app/gallery/gallery.component.html"),
+            providers: [_album_service__WEBPACK_IMPORTED_MODULE_2__["AlbumService"]],
             styles: [__webpack_require__(/*! ./gallery.component.css */ "./src/app/gallery/gallery.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_album_service__WEBPACK_IMPORTED_MODULE_2__["AlbumService"]])
     ], GalleryComponent);
     return GalleryComponent;
 }());
@@ -387,7 +407,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  home works!\n</p>\n"
+module.exports = "<p>\r\n  home works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -432,7 +452,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".menu-bg {\n    background: #fff;\n    box-shadow: 0px 0px 10px #0000008c;\n}\n\n.menu-bg ul {\n    padding: 0px;\n    margin: 0px;\n}\n\n.menu-bg ul li {\n    list-style: none;\n}\n\n.menu-bg ul li a {\n    text-align: center;\n    display: block;\n    padding: 2em;\n    text-decoration: none;\n    font-size: 1.2em;\n    color: #434343\n}\n\n.menu-bg ul li a span:first-child {\n    display: block;\n    margin-bottom: 0.5em;\n}\n\n.active-link {\n    background:#3598DB;\n    color: #fff !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7SUFDakIsbUNBQW1DO0NBQ3RDOztBQUVEO0lBQ0ksYUFBYTtJQUNiLFlBQVk7Q0FDZjs7QUFFRDtJQUNJLGlCQUFpQjtDQUNwQjs7QUFDRDtJQUNJLG1CQUFtQjtJQUNuQixlQUFlO0lBQ2YsYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsY0FBYztDQUNqQjs7QUFFRDtJQUNJLGVBQWU7SUFDZixxQkFBcUI7Q0FDeEI7O0FBRUQ7SUFDSSxtQkFBbUI7SUFDbkIsdUJBQXVCO0NBQzFCIiwiZmlsZSI6InNyYy9hcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWVudS1iZyB7XG4gICAgYmFja2dyb3VuZDogI2ZmZjtcbiAgICBib3gtc2hhZG93OiAwcHggMHB4IDEwcHggIzAwMDAwMDhjO1xufVxuXG4ubWVudS1iZyB1bCB7XG4gICAgcGFkZGluZzogMHB4O1xuICAgIG1hcmdpbjogMHB4O1xufVxuXG4ubWVudS1iZyB1bCBsaSB7XG4gICAgbGlzdC1zdHlsZTogbm9uZTtcbn1cbi5tZW51LWJnIHVsIGxpIGEge1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBwYWRkaW5nOiAyZW07XG4gICAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xuICAgIGZvbnQtc2l6ZTogMS4yZW07XG4gICAgY29sb3I6ICM0MzQzNDNcbn1cblxuLm1lbnUtYmcgdWwgbGkgYSBzcGFuOmZpcnN0LWNoaWxkIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW4tYm90dG9tOiAwLjVlbTtcbn1cblxuLmFjdGl2ZS1saW5rIHtcbiAgICBiYWNrZ3JvdW5kOiMzNTk4REI7XG4gICAgY29sb3I6ICNmZmYgIWltcG9ydGFudDtcbn0iXX0= */"
+module.exports = ".menu-bg {\r\n    background: #fff;\r\n    box-shadow: 0px 0px 10px #0000008c;\r\n}\r\n\r\n.menu-bg ul {\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n\r\n.menu-bg ul li {\r\n    list-style: none;\r\n}\r\n\r\n.menu-bg ul li a {\r\n    text-align: center;\r\n    display: block;\r\n    padding: 2em;\r\n    text-decoration: none;\r\n    font-size: 1.2em;\r\n    color: #434343\r\n}\r\n\r\n.menu-bg ul li a span:first-child {\r\n    display: block;\r\n    margin-bottom: 0.5em;\r\n}\r\n\r\n.active-link {\r\n    background:#3598DB;\r\n    color: #fff !important;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxpQkFBaUI7SUFDakIsbUNBQW1DO0NBQ3RDOztBQUVEO0lBQ0ksYUFBYTtJQUNiLFlBQVk7Q0FDZjs7QUFFRDtJQUNJLGlCQUFpQjtDQUNwQjs7QUFDRDtJQUNJLG1CQUFtQjtJQUNuQixlQUFlO0lBQ2YsYUFBYTtJQUNiLHNCQUFzQjtJQUN0QixpQkFBaUI7SUFDakIsY0FBYztDQUNqQjs7QUFFRDtJQUNJLGVBQWU7SUFDZixxQkFBcUI7Q0FDeEI7O0FBRUQ7SUFDSSxtQkFBbUI7SUFDbkIsdUJBQXVCO0NBQzFCIiwiZmlsZSI6InNyYy9hcHAvbWVudS9tZW51LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubWVudS1iZyB7XHJcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xyXG4gICAgYm94LXNoYWRvdzogMHB4IDBweCAxMHB4ICMwMDAwMDA4YztcclxufVxyXG5cclxuLm1lbnUtYmcgdWwge1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbi5tZW51LWJnIHVsIGxpIHtcclxuICAgIGxpc3Qtc3R5bGU6IG5vbmU7XHJcbn1cclxuLm1lbnUtYmcgdWwgbGkgYSB7XHJcbiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHBhZGRpbmc6IDJlbTtcclxuICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICAgIGZvbnQtc2l6ZTogMS4yZW07XHJcbiAgICBjb2xvcjogIzQzNDM0M1xyXG59XHJcblxyXG4ubWVudS1iZyB1bCBsaSBhIHNwYW46Zmlyc3QtY2hpbGQge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAwLjVlbTtcclxufVxyXG5cclxuLmFjdGl2ZS1saW5rIHtcclxuICAgIGJhY2tncm91bmQ6IzM1OThEQjtcclxuICAgIGNvbG9yOiAjZmZmICFpbXBvcnRhbnQ7XHJcbn0iXX0= */"
 
 /***/ }),
 
@@ -443,7 +463,7 @@ module.exports = ".menu-bg {\n    background: #fff;\n    box-shadow: 0px 0px 10p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"menu-bg\"> \n  <ul>\n    <li>  \n      <a routerLink=\"/home\" routerLinkActive=\"active-link\"> \n       <span> <i class=\"fas fa-home\"></i> </span> \n       <span> Home</span>\n    </a>\n    </li>\n    <li><a routerLink=\"/users\" routerLinkActive=\"active-link\">\n      <span> <i class=\"fas fa-users\"></i></span>\n      <span> Users </span>\n    </a>\n  </li>\n    <li><a routerLink=\"/gallery\" routerLinkActive=\"active-link\"> \n      <span><i class=\"fas fa-images\"></i> </span>\n      <span> gallery </span>\n    </a>\n  </li>\n  </ul>\n</div>"
+module.exports = "<div class=\"menu-bg\"> \r\n  <ul>\r\n    <li>  \r\n      <a routerLink=\"/home\" routerLinkActive=\"active-link\"> \r\n       <span> <i class=\"fas fa-home\"></i> </span> \r\n       <span> Home</span>\r\n    </a>\r\n    </li>\r\n    <li><a routerLink=\"/users\" routerLinkActive=\"active-link\">\r\n      <span> <i class=\"fas fa-users\"></i></span>\r\n      <span> Users </span>\r\n    </a>\r\n  </li>\r\n    <li><a routerLink=\"/gallery\" routerLinkActive=\"active-link\"> \r\n      <span><i class=\"fas fa-images\"></i> </span>\r\n      <span> gallery </span>\r\n    </a>\r\n  </li>\r\n  </ul>\r\n</div>"
 
 /***/ }),
 
@@ -571,7 +591,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"float-right\">\n  <button mat-raised-button color=\"primary\" data-toggle=\"modal\" data-target=\"#addUserModal\">Add User </button>\n</div>\n<div class=\"clearfix\"> </div>\n\n<div *ngFor=\"let user of users\">\n    <p> {{user.name}} </p>\n    <p> {{user.designation}} </p>\n    <p> {{user.email}} </p>\n    <p> {{user.phone}} </p>\n    <button mat-raised-button color=\"warn\"  (click)=\"deleteUser(user._id)\">Delete</button>\n    <button mat-raised-button color=\"primary\"  (click)=\"editUser(user._id)\">Edit</button>\n</div> \n\n\n<!-- <div>\n  <ngx-datatable class=\"material\" [rows]=\"users\" [columns]=\"[{name:'name'},{name:'designation'},{name:'email'}, {name:'phone'}]\"\n    [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\" [rowHeight]=\"'auto'\" [limit]=\"2\">\n  </ngx-datatable>\n</div> -->\n\n\n\n<!--add user modal-->\n<div class=\"modal fade\" id=\"addUserModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\" role=\"document\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n          <span aria-hidden=\"true\">×</span>\n        </button>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"example-container\">\n          <form [formGroup]=\"createForm\" class=\"create-form\">\n            <mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Name\" formControlName=\"name\" #name>\n              <mat-error *ngIf=\"createForm.controls['name'].hasError('required') && (createForm.controls['name'].dirty || createForm.controls['name'].touched)\">This field is required</mat-error>\n              <mat-error *ngIf=\"createForm.controls['name'].hasError('pattern') && (createForm.controls['name'].dirty || createForm.controls['name'].touched)\">Name should not be longer </mat-error>\n            </mat-form-field>\n            <mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Designation\" formControlName=\"designation\" #designation>\n              <mat-error *ngIf=\"createForm.controls['designation'].hasError('required') && (createForm.controls['designation'].dirty || createForm.controls['designation'].touched)\">This field is required</mat-error>\n            </mat-form-field>\n            <mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Email\" formControlName=\"email\" #email>\n              <mat-error *ngIf=\"createForm.controls['email'].hasError('required') && (createForm.controls['email'].dirty || createForm.controls['email'].touched)\">This field is required</mat-error>\n              <mat-error *ngIf=\"createForm.controls['email'].hasError('pattern') && (createForm.controls['email'].dirty || createForm.controls['email'].touched)\">Please enter valid email id</mat-error>\n            </mat-form-field>\n            <mat-form-field class=\"example-full-width\">\n              <input matInput placeholder=\"Phone\" formControlName=\"phone\" #phone>\n              <mat-error *ngIf=\"createForm.controls['phone'].hasError('required') && (createForm.controls['phone'].dirty || createForm.controls['phone'].touched)\">This field is required</mat-error>\n              <mat-error *ngIf=\"createForm.controls['phone'].hasError('pattern') && (createForm.controls['phone'].dirty || createForm.controls['phone'].touched)\">Please enter valid phone number</mat-error>\n            </mat-form-field>\n          </form>\n        </div>\n      </div>\n      <div class=\"modal-footer\">\n          <button type=\"button\" mat-raised-button color=\"accent\" (click)=\"revert()\">Reset</button>\n        <button type=\"button\" mat-raised-button color=\"accent\" data-dismiss=\"modal\">Close</button>\n        <button type=\"submit\" (click)=\"addUser(name.value, designation.value, email.value, phone.value)\" [disabled]=\"createForm.pristine || createForm.invalid\" mat-raised-button color=\"primary\" data-dismiss=\"modal\">Save</button>\n      </div>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"float-right\">\r\n  <button mat-raised-button color=\"primary\" data-toggle=\"modal\" data-target=\"#addUserModal\">Add User </button>\r\n</div>\r\n<div class=\"clearfix\"> </div>\r\n\r\n<div *ngFor=\"let user of users\">\r\n    <p> {{user.name}} </p>\r\n    <p> {{user.designation}} </p>\r\n    <p> {{user.email}} </p>\r\n    <p> {{user.phone}} </p>\r\n    <button mat-raised-button color=\"warn\"  (click)=\"deleteUser(user._id)\">Delete</button>\r\n    <button mat-raised-button color=\"primary\"  (click)=\"editUser(user._id)\">Edit</button>\r\n</div> \r\n\r\n\r\n<!-- <div>\r\n  <ngx-datatable class=\"material\" [rows]=\"users\" [columns]=\"[{name:'name'},{name:'designation'},{name:'email'}, {name:'phone'}]\"\r\n    [columnMode]=\"'force'\" [headerHeight]=\"50\" [footerHeight]=\"50\" [rowHeight]=\"'auto'\" [limit]=\"2\">\r\n  </ngx-datatable>\r\n</div> -->\r\n\r\n\r\n\r\n<!--add user modal-->\r\n<div class=\"modal fade\" id=\"addUserModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\" role=\"document\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n          <span aria-hidden=\"true\">×</span>\r\n        </button>\r\n      </div>\r\n      <div class=\"modal-body\">\r\n        <div class=\"example-container\">\r\n          <form [formGroup]=\"createForm\" class=\"create-form\">\r\n            <mat-form-field class=\"example-full-width\">\r\n              <input matInput placeholder=\"Name\" formControlName=\"name\" #name>\r\n              <mat-error *ngIf=\"createForm.controls['name'].hasError('required') && (createForm.controls['name'].dirty || createForm.controls['name'].touched)\">This field is required</mat-error>\r\n              <mat-error *ngIf=\"createForm.controls['name'].hasError('pattern') && (createForm.controls['name'].dirty || createForm.controls['name'].touched)\">Name should not be longer </mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"example-full-width\">\r\n              <input matInput placeholder=\"Designation\" formControlName=\"designation\" #designation>\r\n              <mat-error *ngIf=\"createForm.controls['designation'].hasError('required') && (createForm.controls['designation'].dirty || createForm.controls['designation'].touched)\">This field is required</mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"example-full-width\">\r\n              <input matInput placeholder=\"Email\" formControlName=\"email\" #email>\r\n              <mat-error *ngIf=\"createForm.controls['email'].hasError('required') && (createForm.controls['email'].dirty || createForm.controls['email'].touched)\">This field is required</mat-error>\r\n              <mat-error *ngIf=\"createForm.controls['email'].hasError('pattern') && (createForm.controls['email'].dirty || createForm.controls['email'].touched)\">Please enter valid email id</mat-error>\r\n            </mat-form-field>\r\n            <mat-form-field class=\"example-full-width\">\r\n              <input matInput placeholder=\"Phone\" formControlName=\"phone\" #phone>\r\n              <mat-error *ngIf=\"createForm.controls['phone'].hasError('required') && (createForm.controls['phone'].dirty || createForm.controls['phone'].touched)\">This field is required</mat-error>\r\n              <mat-error *ngIf=\"createForm.controls['phone'].hasError('pattern') && (createForm.controls['phone'].dirty || createForm.controls['phone'].touched)\">Please enter valid phone number</mat-error>\r\n            </mat-form-field>\r\n          </form>\r\n        </div>\r\n      </div>\r\n      <div class=\"modal-footer\">\r\n          <button type=\"button\" mat-raised-button color=\"accent\" (click)=\"revert()\">Reset</button>\r\n        <button type=\"button\" mat-raised-button color=\"accent\" data-dismiss=\"modal\">Close</button>\r\n        <button type=\"submit\" (click)=\"addUser(name.value, designation.value, email.value, phone.value)\" [disabled]=\"createForm.pristine || createForm.invalid\" mat-raised-button color=\"primary\" data-dismiss=\"modal\">Save</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -746,7 +766,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/micropro/Desktop/mean/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Shiva\Desktop\mean-app\src\main.ts */"./src/main.ts");
 
 
 /***/ })

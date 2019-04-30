@@ -2,6 +2,7 @@ const express = require('express');
 const router= express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user');
+const Album = require('../models/gallery');
 const db = "mongodb+srv://mean:mean@123@mean-users-9nwkz.mongodb.net/test?retryWrites=true";
 
 
@@ -15,7 +16,18 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
     }
 });
 
-
+//get api for album
+router.get('/albums', function(req, res){
+    console.log('Get request for all album');
+    Album.find({})
+    .exec(function(err, users){
+        if (err){
+            console.log("Error retrieving albums");
+        }else {
+            res.json(users);
+        }
+    });
+})
 //get api 
 router.get('/users', function(req, res){
     console.log('Get request for all users');
