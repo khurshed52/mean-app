@@ -28,10 +28,10 @@ export class UsersComponent implements OnInit {
     private saveSwal: SweetAlert2Module
     ) {
     this.createForm = this.fb.group({
-      name: ['', Validators.required],
-      designation: '',
-      email: '',
-      phone: ''
+      name: ['', Validators.compose([Validators.required, Validators.pattern(/^.{0,50}$/)])],
+      designation: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.pattern(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)])],
+      phone: ['', Validators.compose([Validators.required, Validators.pattern(/^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/)])]
     });
   }
 
@@ -42,8 +42,12 @@ export class UsersComponent implements OnInit {
 
   }
 
-  //add user
+  //reset form
+  revert():void {
+    this.createForm.reset();
+  }
 
+  //add user
   addUser(name, designation, email, phone) {
     this._user.addUser(name, designation, email, phone).subscribe();
     // this.router.navigate(['/home']);

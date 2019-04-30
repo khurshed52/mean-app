@@ -14,7 +14,7 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  private get_url = "api/users";
+  private get_url = "/api/users";
   private del_url = "/api/users/";
   //get user
   getUsers() {

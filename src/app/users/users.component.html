@@ -35,20 +35,28 @@
           <form [formGroup]="createForm" class="create-form">
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Name" formControlName="name" #name>
+              <mat-error *ngIf="createForm.controls['name'].hasError('required') && (createForm.controls['name'].dirty || createForm.controls['name'].touched)">This field is required</mat-error>
+              <mat-error *ngIf="createForm.controls['name'].hasError('pattern') && (createForm.controls['name'].dirty || createForm.controls['name'].touched)">Name should not be longer </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Designation" formControlName="designation" #designation>
+              <mat-error *ngIf="createForm.controls['designation'].hasError('required') && (createForm.controls['designation'].dirty || createForm.controls['designation'].touched)">This field is required</mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Email" formControlName="email" #email>
+              <mat-error *ngIf="createForm.controls['email'].hasError('required') && (createForm.controls['email'].dirty || createForm.controls['email'].touched)">This field is required</mat-error>
+              <mat-error *ngIf="createForm.controls['email'].hasError('pattern') && (createForm.controls['email'].dirty || createForm.controls['email'].touched)">Please enter valid email id</mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Phone" formControlName="phone" #phone>
+              <mat-error *ngIf="createForm.controls['phone'].hasError('required') && (createForm.controls['phone'].dirty || createForm.controls['phone'].touched)">This field is required</mat-error>
+              <mat-error *ngIf="createForm.controls['phone'].hasError('pattern') && (createForm.controls['phone'].dirty || createForm.controls['phone'].touched)">Please enter valid phone number</mat-error>
             </mat-form-field>
           </form>
         </div>
       </div>
       <div class="modal-footer">
+          <button type="button" mat-raised-button color="accent" (click)="revert()">Reset</button>
         <button type="button" mat-raised-button color="accent" data-dismiss="modal">Close</button>
         <button type="submit" (click)="addUser(name.value, designation.value, email.value, phone.value)" [disabled]="createForm.pristine || createForm.invalid" mat-raised-button color="primary" data-dismiss="modal">Save</button>
       </div>
