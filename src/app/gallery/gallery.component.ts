@@ -13,11 +13,14 @@ export class GalleryComponent implements OnInit {
   albums:any;
   constructor( private _album: AlbumService) { }
 
+  public galleryTitle:string = 'Welcome to Galley Page';
   ngOnInit() {
     this._album.getAlbums().subscribe(
       album => this.albums = album,
     );
-
   }
+
+  defaultImage = 'https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
+  offset = 100;
 
 }

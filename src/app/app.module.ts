@@ -13,9 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import {MatButtonModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatInputModule,  MatCardModule, MatIconModule, MatMenuModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditComponent } from './edit/edit.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 
 @NgModule({
@@ -31,14 +32,18 @@ import { EditComponent } from './edit/edit.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatCardModule,
     BrowserAnimationsModule,
     NgxDatatableModule,
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
     MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    LazyLoadImageModule,
     SweetAlert2Module.forRoot()
   ],
   providers: [],

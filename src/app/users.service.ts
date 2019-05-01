@@ -49,12 +49,5 @@ getUsersById(id) {
 }
 
 
-//update users
-updateUsers(user: Users) {
-  let headers = new Headers({ 'Content-Type': 'application/json' });
-  let options = new RequestOptions({ headers: headers });
-  return this.http.put(this.del_url + user._id, JSON.stringify(user))
-    .map((response: Response) => response.json());
-}
 
 }

@@ -131,3 +131,13 @@ body {
   button:focus {
     outline: 0px !important;
 }
+
+.heading {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 0.5em
+}
+
+.mat-card-header-text {
+    margin: 0px !important;
+}

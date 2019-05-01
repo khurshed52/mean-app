@@ -11,8 +11,6 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  users: any;
-  id: String;
   updateForm: FormGroup;
   constructor(private _user: UsersService, private fb: FormBuilder, private router: Router, private snack: MatSnackBar) { 
     this.createForm();
