@@ -3,8 +3,9 @@ const router= express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const Album = require('../models/gallery');
-const db = "mongodb+srv://mean:mean@123@mean-users-9nwkz.mongodb.net/test?retryWrites=true";
+require('dotenv').config()
 
+const db = process.env.MONGOURI
 
 mongoose.Promise = global.Promise;
 
