@@ -51,7 +51,7 @@ export class UsersComponent implements OnInit {
   addUser(name, designation, email, phone) {
     this._user.addUser(name, designation, email, phone).subscribe();
     // this.router.navigate(['/home']);
-    this.snack.open('user updated successfully', 'OK', {
+    this.snack.open('user Added successfully', 'OK', {
       duration: 3000
     });
   }
@@ -96,5 +96,6 @@ export class UsersComponent implements OnInit {
 editUser(id) {
   this.router.navigate([`/edit/${id}`]);
 }
+
 
 }

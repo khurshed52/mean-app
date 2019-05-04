@@ -17,6 +17,7 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
     }
 });
 
+
 //get api for album
 router.get('/albums', function(req, res){
     console.log('Get request for all album');
@@ -29,7 +30,7 @@ router.get('/albums', function(req, res){
         }
     });
 })
-//get api 
+//get api for users
 router.get('/users', function(req, res){
     console.log('Get request for all users');
     User.find({})
@@ -42,6 +43,18 @@ router.get('/users', function(req, res){
     });
 });
 
+// get request with id 
+router.get('/users/:id', function(req, res){
+    console.log('Get request for all users with id');
+    User.findById(req.params.id)
+    .exec(function(err, users){
+        if (err){
+            console.log("Error retrieving users");
+        }else {
+            res.json(users);
+        }
+    });
+});
 
 // post api 
 router.post('/users', function(req, res){
@@ -73,7 +86,6 @@ router.delete('/users/:id', function(req, res){
 });
 
 //edit api 
-
 router.put('/users/:id', function(req, res){
     console.log('Update a user');
     User.findByIdAndUpdate(req.params.id,
