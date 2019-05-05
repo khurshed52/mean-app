@@ -1,15 +1,15 @@
 <form [formGroup]="updateForm" class="create-form">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Name" formControlName="name" #name>
+    <input matInput placeholder="Name" formControlName="name" #name  [(ngModel)]="users.name">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Designation" formControlName="designation" #designation>
+    <input matInput placeholder="Designation" formControlName="designation" #designation [(ngModel)]="users.designation">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Email" formControlName="email" #email>
+    <input matInput placeholder="Email" formControlName="email" #email [(ngModel)]="users.email">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Phone" formControlName="phone" #phone>
+    <input matInput placeholder="Phone" formControlName="phone" #phone [(ngModel)]="users.phone">
   </mat-form-field>
-  <!-- <button type="submit" (click)="updateUser(name.value, designation.value, email.value, phone.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button> -->
+  <button type="submit" (click)="editUsers(name.value, designation.value, email.value, phone.value)" [disabled]="updateForm.pristine || updateForm.invalid" mat-raised-button color="primary">Save</button>
 </form>

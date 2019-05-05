@@ -11,7 +11,6 @@ import 'rxjs/add/operator/map';
 export class UsersService {
   users: Users[];
 
-
   constructor(private http: HttpClient) { }
 
   private get_url = "/api/users";
@@ -49,5 +48,15 @@ getUsersById(id) {
 }
 
 
+updateUser(name, designation, email, phone, id) {
+    const obj = {
+        name: name,
+        designation: designation,
+        email: email,
+        phone:phone
+      };
+    this.http.put(this.del_url+id, obj)
+      .subscribe(res => console.log('Done'));
+  }
 
 }
