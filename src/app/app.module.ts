@@ -17,7 +17,7 @@ import {MatButtonModule, MatInputModule,  MatCardModule, MatIconModule, MatMenuM
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditComponent } from './edit/edit.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -44,6 +44,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     MatInputModule,
     MatFormFieldModule,
     LazyLoadImageModule,
+    NgxPaginationModule,
     SweetAlert2Module.forRoot()
   ],
   providers: [],

@@ -9,8 +9,15 @@ import 'rxjs/add/operator/map';
 export class AlbumService {
   constructor( private http: HttpClient) { }
   private get_url = "/api/albums";
-
+  private del_url = "/api/albums/";
+  //get album
   getAlbums(){
     return this.http.get(this.get_url);
   }
+
+  //delete album
+
+deleteAlbum(id){
+  return this.http.delete(this.del_url+id)
+}
 }

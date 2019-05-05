@@ -139,5 +139,16 @@ body {
 }
 
 .mat-card-header-text {
-    margin: 0px !important;
+    margin: 0 auto 0 0 !important;
+    width: 82%;
+}
+
+.mat-card-header .mat-card-title {
+    margin-bottom: 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 99%;
+    text-overflow: ellipsis;
+    margin-top: 10px;
 }

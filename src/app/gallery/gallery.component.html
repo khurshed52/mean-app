@@ -1,18 +1,25 @@
 <div class="row">
-    <h1 class="heading"> {{ galleryTitle}}</h1>
+  <h1 class="heading"> {{ galleryTitle}}</h1>
 </div>
-<div class="row"> 
-<mat-card class="col-6" *ngFor="let album of albums">
-    <mat-card-header>
-      <mat-card-title>{{album.title}}</mat-card-title>
-      <button mat-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item><mat-icon>mode_edit </mat-icon> <span>Edit</span></button>
-        <button mat-menu-item><mat-icon>delete </mat-icon> <span>Delete</span> </button>
-      </mat-menu>
-    </mat-card-header>
-    <img mat-card-image [defaultImage]="defaultImage" [lazyLoad]="album.url" [offset]="offset">
-  </mat-card>
+<div class="row">
+  <div class="col-3" *ngFor="let album of albums | paginate: { itemsPerPage: 4, currentPage: p }">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{album.title}}</mat-card-title>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>mode_edit </mat-icon> <span>Edit</span>
+          </button>
+          <button mat-menu-item (click)="deleteAlbum(album._id)">
+            <mat-icon>delete </mat-icon> <span>Delete</span>
+          </button>
+        </mat-menu>
+      </mat-card-header>
+      <img mat-card-image [defaultImage]="defaultImage" [lazyLoad]="album.url" [offset]="offset">
+    </mat-card>
+  </div>
 </div>
-
-
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

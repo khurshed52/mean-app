@@ -28,6 +28,19 @@ router.get('/albums', function(req, res){
         }
     });
 })
+
+//delete api for albums
+router.delete('/albums/:id', function(req, res){
+    console.log('Deleting an album');
+    Album.findByIdAndRemove(req.params.id, function(err, deletedAlbum){
+        if(err){
+            res.send("Error deleting album");
+        }else{
+            res.json(deletedAlbum);
+        }
+    });
+});
+
 //get api 
 router.get('/users', function(req, res){
     console.log('Get request for all users');
