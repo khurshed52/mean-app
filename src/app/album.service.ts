@@ -16,8 +16,16 @@ export class AlbumService {
   }
 
   //delete album
-
 deleteAlbum(id){
   return this.http.delete(this.del_url+id)
 }
+//post album
+addAlbum(title, url) {
+  const album = {
+    title: title,
+    url: url
+  };
+  return this.http.post(this.get_url, album);
+}
+
 }

@@ -2,6 +2,28 @@
   <h1 class="heading"> {{ galleryTitle}}</h1>
 </div>
 <div class="row">
+  <button mat-raised-button color="primary" (click)="showForm()">Add Gallery</button>
+</div>
+
+<!--add gallery div-->
+<div class="row">
+  <div class="form" *ngIf="addGalleryForm">
+    <form [formGroup]="addForm">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="title" formControlName="title" #title>
+        <mat-error *ngIf="addForm.controls['title'].hasError('required') && (addForm.controls['title'].dirty || addForm.controls['title'].touched)">This field is required</mat-error>
+        <mat-error *ngIf="addForm.controls['title'].hasError('pattern') && (addForm.controls['title'].dirty || addForm.controls['title'].touched)">Title should not be longer</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="url" formControlName="url" #url>
+      </mat-form-field>
+      <button type="submit" (click)="addGallery( title.value, url.value)" [disabled]="addForm.pristine || addForm.invalid" mat-raised-button color="primary" >Save</button>
+     </form> 
+  </div>
+</div>
+
+<!--show galllery-->
+<div class="row">
   <div class="col-3" *ngFor="let album of albums | paginate: { itemsPerPage: 4, currentPage: p }">
     <mat-card>
       <mat-card-header>

@@ -18,36 +18,7 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
 });
 
 
-//get api for album
-router.get('/albums', function(req, res){
-    console.log('Get request for all album');
-    Album.find({})
-    .exec(function(err, users){
-        if (err){
-            console.log("Error retrieving albums");
-        }else {
-            res.json(users);
-        }
-    });
-})
-<<<<<<< HEAD
-
-//delete api for albums
-router.delete('/albums/:id', function(req, res){
-    console.log('Deleting an album');
-    Album.findByIdAndRemove(req.params.id, function(err, deletedAlbum){
-        if(err){
-            res.send("Error deleting album");
-        }else{
-            res.json(deletedAlbum);
-        }
-    });
-});
-
-//get api 
-=======
 //get api for users
->>>>>>> fc23ecea0a874647ee938eb10c4abe2682853891
 router.get('/users', function(req, res){
     console.log('Get request for all users');
     User.find({})
@@ -60,7 +31,7 @@ router.get('/users', function(req, res){
     });
 });
 
-// get request with id 
+// get user request with id 
 router.get('/users/:id', function(req, res){
     console.log('Get request for all users with id');
     User.findById(req.params.id)
@@ -121,6 +92,61 @@ router.put('/users/:id', function(req, res){
     }
 
     );
+});
+
+//albums api start
+
+//get api for album
+router.get('/albums', function(req, res){
+    console.log('Get request for all album');
+    Album.find({})
+    .exec(function(err, users){
+        if (err){
+            console.log("Error retrieving albums");
+        }else {
+            res.json(users);
+        }
+    });
+})
+
+// get album request with id 
+router.get('/albums/:id', function(req, res){
+    console.log('Get request for all albums with id');
+    Album.findById(req.params.id)
+    .exec(function(err, albums){
+        if (err){
+            console.log("Error retrieving album");
+        }else {
+            res.json(albums);
+        }
+    });
+});
+
+//post api albums
+router.post('/albums', function(req, res){
+    console.log('Post a albums');
+    var newAlbum = new Album();
+    newAlbum.title = req.body.title;
+    newAlbum.url = req.body.url;
+    newAlbum.save(function(err, insertedAlbum){
+        if (err){
+            console.log('Error saving album');
+        }else{
+            res.json(insertedAlbum);
+        }
+    });
+});
+
+//delete api for albums
+router.delete('/albums/:id', function(req, res){
+    console.log('Deleting an album');
+    Album.findByIdAndRemove(req.params.id, function(err, deletedAlbum){
+        if(err){
+            res.send("Error deleting album");
+        }else{
+            res.json(deletedAlbum);
+        }
+    });
 });
 
 module.exports = router;

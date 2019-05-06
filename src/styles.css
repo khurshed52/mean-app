@@ -120,7 +120,7 @@ body {
     flex-direction: column;
   }
   
-  .example-container > * {
+  .example-container > * , .form {
     width: 100%;
   }
 

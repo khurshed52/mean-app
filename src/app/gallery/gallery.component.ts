@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Albums } from '../album';
 import { AlbumService } from '../album.service'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';
 declare var Swal:any
 @Component({
@@ -12,7 +14,18 @@ declare var Swal:any
 export class GalleryComponent implements OnInit {
   albums:any;
   p: number = 1;
-  constructor( private _album: AlbumService) { }
+  public addGalleryForm:boolean = false;
+  addForm:FormGroup;
+  constructor( 
+    private _album: AlbumService,
+    private fb: FormBuilder,
+    private snack : MatSnackBar
+  ) { 
+    this.addForm = this.fb.group({
+      title:['', Validators.compose([Validators.required, Validators.pattern(/^.{0,50}$/)])],
+      url:['', Validators.required]
+    });
+  }
 
   public galleryTitle:string = 'Welcome to Gallery Page';
   ngOnInit() {
@@ -25,7 +38,6 @@ export class GalleryComponent implements OnInit {
   offset = 100;
 
   //delete album
-
   deleteAlbum(id: any) {
     Swal.fire({
       title: 'Are you sure?',
@@ -53,8 +65,21 @@ export class GalleryComponent implements OnInit {
         )
       }
     })
-   
-
   };
+
+  //show gallery add form
+  showForm():void  {
+    this.addGalleryForm = !this.addGalleryForm;
+    //this.addGalleryForm = true;
+  }
+
+  addGallery(title, url){
+    this.addGalleryForm = false;
+    this._album.addAlbum(title, url).subscribe();
+    this.snack.open('Album Added successfully', 'OK', {
+      duration: 3000
+    });
+  }
+
 
 }
