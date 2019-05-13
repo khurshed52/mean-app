@@ -23,7 +23,7 @@ export class GalleryComponent implements OnInit {
   ) { 
     this.addForm = this.fb.group({
       title:['', Validators.compose([Validators.required, Validators.pattern(/^.{0,50}$/)])],
-      url:['', Validators.required]
+      url:['', Validators.compose([Validators.required, Validators.pattern(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/)])]
     });
   }
 

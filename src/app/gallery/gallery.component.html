@@ -16,6 +16,8 @@
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <input matInput placeholder="url" formControlName="url" #url>
+        <mat-error *ngIf="addForm.controls['url'].hasError('required') && (addForm.controls['url'].dirty || addForm.controls['url'].touched)">This field is required</mat-error>
+        <mat-error *ngIf="addForm.controls['url'].hasError('pattern') && (addForm.controls['url'].dirty || addForm.controls['url'].touched)">Please enter valid image url </mat-error>
       </mat-form-field>
       <button type="submit" (click)="addGallery( title.value, url.value)" [disabled]="addForm.pristine || addForm.invalid" mat-raised-button color="primary" >Save</button>
      </form> 
