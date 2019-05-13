@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditComponent } from './edit/edit.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { HomedetailsComponent } from './homedetails/homedetails.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HomeComponent,
     GalleryComponent,
     UsersComponent,
-    EditComponent
+    EditComponent,
+    HomedetailsComponent
   ],
   imports: [
     BrowserModule,
