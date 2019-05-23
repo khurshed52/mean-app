@@ -2,3 +2,29 @@
   <p> {{post.title | uppercase}} </p>
   <button class="btn btn-primary" (click)="detailsPage(post.id)"> {{go | titlecase}} </button>
 </div>
+<h1> Angular Pipe example </h1>
+<div *ngFor="let file of files | sortdata; index as i">
+    <p> {{i+1}} {{file | titlecase}}</p>
+</div>
+
+<div class="row">
+  <div class="col-4" *ngFor="let user of users | slice:0:5; index as i">
+    <div class="box"> 
+    <span class="badge badge-pill badge-info">{{i+1}}</span>
+    <h3> {{user.name}}</h3>
+    <p> {{user.username}}</p>
+    <p> {{user.address.street}}</p>
+    <p> {{user.address.suite}}</p>
+    <p> {{user.address.city}}</p>
+    <p> {{user.address.zipcode}}</p>
+    <p> {{user.address.geo.lat}}</p>
+    <p> {{user.address.geo.lng}}</p>
+    <p> {{user.phone}}</p>
+    <p> {{user.website}}</p>
+    <p> {{user.company.name}}</p>
+    <p> {{user.company.catchPhrase}}</p>
+    <p> {{user.company.bs}}</p>
+    <button class="btn btn-primary" (click)="userEmail(user.email)"> Get User Email</button>
+  </div>
+</div>
+</div>

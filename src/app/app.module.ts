@@ -19,6 +19,7 @@ import { EditComponent } from './edit/edit.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HomedetailsComponent } from './homedetails/homedetails.component';
+import { SortdataPipe } from './pipes/sortdata.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HomedetailsComponent } from './homedetails/homedetails.component';
     GalleryComponent,
     UsersComponent,
     EditComponent,
-    HomedetailsComponent
+    HomedetailsComponent,
+    SortdataPipe
   ],
   imports: [
     BrowserModule,

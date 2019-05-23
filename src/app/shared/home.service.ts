@@ -12,6 +12,12 @@ export class HomeService {
 
   private url = 'https://jsonplaceholder.typicode.com/posts';
 
+  private userUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  getEmp(){
+    return this.http.get(this.userUrl);
+  }
+
   getPosts() {
     return this.http.get(this.url);
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Albums } from '../album';
-import { AlbumService } from '../album.service'
+import { Albums } from '../shared/album';
+import { AlbumService } from '../shared/album.service'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';

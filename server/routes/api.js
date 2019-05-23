@@ -17,6 +17,9 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
     }
 });
 
+router.get('/books', function(req, res){
+    res.send([{id:'1', name:'sport services'}, {id:'2', name:'sport services1'}, {id:'4', name:'sport services3'}]);
+});
 
 //get api for users
 router.get('/users', function(req, res){

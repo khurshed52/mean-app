@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, FormBuilder, Validators } from '@angular/forms';
 
-import { UsersService } from '../users.service';
+import { UsersService } from '../shared/users.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Users } from '../user';
+import { Users } from '../shared/user';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 @Component({

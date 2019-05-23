@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
+import { UsersService } from '../shared/users.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Users } from '../user';
+import { Users } from '../shared/user';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
