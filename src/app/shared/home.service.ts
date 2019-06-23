@@ -11,8 +11,12 @@ export class HomeService {
   constructor( private http: HttpClient) { }
 
   private url = 'https://jsonplaceholder.typicode.com/posts';
-
+  private link= 'http://localhost:4000/api/gas-services';
   private userUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  getService(){
+    return this.http.get(this.link);
+  }
 
   getEmp(){
     return this.http.get(this.userUrl);

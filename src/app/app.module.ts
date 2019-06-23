@@ -20,6 +20,9 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { HomedetailsComponent } from './homedetails/homedetails.component';
 import { SortdataPipe } from './pipes/sortdata.pipe';
+import { BlueColorDirective } from './directive/blue-color.directive';
+import { ParentComponent } from './parent/parent.component';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { SortdataPipe } from './pipes/sortdata.pipe';
     UsersComponent,
     EditComponent,
     HomedetailsComponent,
-    SortdataPipe
+    SortdataPipe,
+    BlueColorDirective,
+    ParentComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,

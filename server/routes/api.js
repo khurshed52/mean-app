@@ -3,6 +3,7 @@ const router= express.Router();
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const Album = require('../models/gallery');
+const Salary = require ('../models/salary');
 require('dotenv').config()
 
 const db = process.env.MONGOURI
@@ -17,10 +18,32 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
     }
 });
 
-router.get('/books', function(req, res){
-    res.send([{id:'1', name:'sport services'}, {id:'2', name:'sport services1'}, {id:'4', name:'sport services3'}]);
+const services = [{id:1, name:'sport services 1'}, {id:2, name:'sport services 2'}, {id:3, name:'sport services 3'}, {id:4, name:'sport services 4'}];
+router.get('/gas-services', (req, res)=>{
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');  
+    res.send(services);
 });
 
+router.get('/gas-services/:id', function (req, res) {
+    const service = services.find(c=> c.id === parseInt(req.params.id));
+    if(!service) res.status(404).send('error');
+    res.send(service);
+  });
+
+//get api for salary
+router.get('/salary', (req, res)=> {
+    console.log('Get request for all users salary');
+    res.setHeader('Access-Control-Allow-Origin' , 'http://localhost:4200')
+    Salary.find().exec(function(err, salary){
+        if (err) {
+            res.send('error');
+        }else{
+            res.json(salary);
+        }
+    })
+})
+
+  
 //get api for users
 router.get('/users', function(req, res){
     console.log('Get request for all users');

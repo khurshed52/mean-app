@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let salary of salaries">
+     <p>{{salary.name}} </p> 
+      <p>{{salary.salary}} </p> 
+      <button class="btn btn-primary" (click)="getSalary(salary._id)"> Get id </button>
+  </li>
+</ul> 

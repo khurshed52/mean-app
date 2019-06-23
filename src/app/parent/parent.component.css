@@ -1,0 +1,17 @@
+.setting i {
+    font-size: 2em;
+    margin-top: 2em;
+    color:#3598DB;
+    cursor:pointer
+}
+
+.settingArea {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background: rgb(33, 172, 203);
+    padding:10px;
+}

@@ -12,9 +12,13 @@ declare var Swal:any;
 export class HomeComponent implements OnInit {
   posts: any;
   users:any;
+  services:any;
   constructor( private _post: HomeService, private router: Router) { }
   go:string= 'go to details';
   ngOnInit() {
+
+    this._post.getService().subscribe(service=> this.services= service)
+
     this._post.getPosts().subscribe(post => 
       this.posts = post,
     );
@@ -29,13 +33,49 @@ export class HomeComponent implements OnInit {
     this.router.navigate([`/homedetails/${id}`]);
   }
 
-  files = ['webpack', 'Angular', 'Angular 2+', 'react'] ;
+  files = [
+    {'name':'webpack', 'rating': 10}, 
+    {'name': 'Angular'}, 
+    {'name': 'Angular 2+'}, 
+    {'name':'react'}
+  ] ;
 
   userEmail(email) {
-   // alert(email);
     Swal.fire({
      type: 'success',
-     text: email,
+     text: email
   })
   }
+
+  del(user) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.value) {
+        let index = this.users.indexOf(user);
+        this.users.splice(index, 1);
+        Swal.fire(
+          'Deleted!',
+          'Your file has been deleted.',
+          'success'
+        )
+      }
+    })
+  }
+
+  getId(id) {
+    console.log(id)
+  }
+
+  public carList = ['bmw', 'ferrari', 'maruti'];
+  public bikeList = ['honda', 'yamaha', 'suzuki'];
+
+public all = [...this.carList, ...this.bikeList].join(' ');
+
 }

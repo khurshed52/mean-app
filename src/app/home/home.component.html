@@ -3,15 +3,15 @@
   <button class="btn btn-primary" (click)="detailsPage(post.id)"> {{go | titlecase}} </button>
 </div>
 <h1> Angular Pipe example </h1>
-<div *ngFor="let file of files | sortdata; index as i">
-    <p> {{i+1}} {{file | titlecase}}</p>
+<div *ngFor="let file of files |  sortdata; index as i">
+    <p blueColored> {{i+1}} {{file.name | titlecase}} <span class="badge badge-primary">{{file.rating}}</span></p>
 </div>
 
 <div class="row">
   <div class="col-4" *ngFor="let user of users | slice:0:5; index as i">
     <div class="box"> 
     <span class="badge badge-pill badge-info">{{i+1}}</span>
-    <h3> {{user.name}}</h3>
+    <h3 blueColored> {{user.name}}</h3>
     <p> {{user.username}}</p>
     <p> {{user.address.street}}</p>
     <p> {{user.address.suite}}</p>
@@ -25,6 +25,15 @@
     <p> {{user.company.catchPhrase}}</p>
     <p> {{user.company.bs}}</p>
     <button class="btn btn-primary" (click)="userEmail(user.email)"> Get User Email</button>
+    <button class="btn btn-primary" (click)="del(user)"> Delete list </button>
   </div>
 </div>
 </div>
+
+<div *ngFor="let service of services">
+  <p>{{service.id}}</p>
+  <p>{{service.name}}</p>
+  <button (click)="getId(service.id)"> hello </button>
+</div>
+
+<p> {{all | titlecase}}</p>
