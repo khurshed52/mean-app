@@ -24,7 +24,7 @@ import { BlueColorDirective } from './directive/blue-color.directive';
 import { ParentComponent } from './parent/parent.component';
 import { TodoComponent } from './todo/todo.component';
 import { AgmCoreModule } from '@agm/core';
-
+import {MaterialModule} from './material/material.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +54,7 @@ import { AgmCoreModule } from '@agm/core';
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
+    MaterialModule,
     LazyLoadImageModule,
     NgxPaginationModule,
     AgmCoreModule.forRoot({
