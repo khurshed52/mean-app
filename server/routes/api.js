@@ -42,7 +42,6 @@ router.get('/salary', (req, res)=> {
         }
     })
 })
-
   
 //get api for users
 router.get('/users', function(req, res){

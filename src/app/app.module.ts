@@ -23,6 +23,7 @@ import { SortdataPipe } from './pipes/sortdata.pipe';
 import { BlueColorDirective } from './directive/blue-color.directive';
 import { ParentComponent } from './parent/parent.component';
 import { TodoComponent } from './todo/todo.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,9 @@ import { TodoComponent } from './todo/todo.component';
     MatFormFieldModule,
     LazyLoadImageModule,
     NgxPaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDDkpiRnWEuyvar1roCdSb89THM7MnHjRc'
+    }),
     SweetAlert2Module.forRoot()
   ],
   providers: [],

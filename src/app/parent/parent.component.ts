@@ -14,15 +14,15 @@ export class ParentComponent implements OnInit {
   name:string;
   email:string;
   message:string; 
-
   constructor() { 
-    setInterval(()=>{
-      this.getTime = moment().format('h:mm:ss a');
-    },1)
+   setInterval(()=>{
+     this.getTime =moment().format('h:mm:ss');
+   },1)
   }
 
   ngOnInit() {
   }
+  
 
   showInput() { 
     this.parent = !this.parent

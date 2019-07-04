@@ -123,3 +123,7 @@
     background: #3498da;
     color: #fff;
 }
+
+agm-map {
+  height: 300px;
+}
