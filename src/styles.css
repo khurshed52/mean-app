@@ -152,3 +152,15 @@ body {
     text-overflow: ellipsis;
     margin-top: 10px;
 }
+
+.darkmode--activated p, .darkmode--activated li {
+    color: #fff;
+  }
+
+  .darkmode--activated body {
+      background: red
+  }
+
+  .darkmode-layer {
+      mix-blend-mode: inherit !important;
+  }
