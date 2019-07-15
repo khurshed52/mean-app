@@ -24,7 +24,9 @@ import { BlueColorDirective } from './directive/blue-color.directive';
 import { ParentComponent } from './parent/parent.component';
 import { TodoComponent } from './todo/todo.component';
 import { AgmCoreModule } from '@agm/core';
-import {MaterialModule} from './material/material.module'
+import {MaterialModule} from './material/material.module';
+import { ChartsModule } from 'ng2-charts';
+import { NgChartComponent } from './ng-chart/ng-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import {MaterialModule} from './material/material.module'
     SortdataPipe,
     BlueColorDirective,
     ParentComponent,
-    TodoComponent
+    TodoComponent,
+    NgChartComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import {MaterialModule} from './material/material.module'
     MaterialModule,
     LazyLoadImageModule,
     NgxPaginationModule,
+    ChartsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDDkpiRnWEuyvar1roCdSb89THM7MnHjRc'
     }),

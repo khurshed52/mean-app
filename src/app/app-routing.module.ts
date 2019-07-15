@@ -6,7 +6,8 @@ import { UsersComponent } from './users/users.component';
 import { EditComponent } from './edit/edit.component';
 import { HomedetailsComponent } from './homedetails/homedetails.component';
 import { ParentComponent } from './parent/parent.component';
-import {TodoComponent} from './todo/todo.component'
+import {TodoComponent} from './todo/todo.component';
+import { NgChartComponent } from './ng-chart/ng-chart.component';
 const routes: Routes = [
   {path:'', redirectTo:'/users', pathMatch:'full'},
   {path:'users', component:UsersComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'homedetails/:id', component:HomedetailsComponent},
   {path:'gallery', component:GalleryComponent},
   {path:'parent' , component:ParentComponent},
-  {path:'todo', component:TodoComponent}
+  {path:'todo', component:TodoComponent},
+  {path: 'ngchart', component:NgChartComponent }
 ];
 
 @NgModule({
