@@ -28,4 +28,10 @@ export class NgChartComponent implements OnInit {
   ngOnInit() {
   }
 
+  products = [
+    {name:'Mac', price: 6000},
+    {name:'Windows', price: 4000},
+    {name:'Linux', price: 3000},
+  ]
+
 }

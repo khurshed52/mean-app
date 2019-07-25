@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   posts: any;
   users:any;
   services:any;
+  loading:boolean =true;
   constructor( private _post: HomeService, private router: Router) { }
   go:string= 'go to details';
   ngOnInit() {
@@ -23,8 +24,12 @@ export class HomeComponent implements OnInit {
       this.posts = post,
     );
 
-    this._post.getEmp().subscribe(user => 
-      this.users = user,
+    this._post.getEmp().subscribe(
+      user => {
+        console.log(user);
+        this.users = user;
+        this.loading = false 
+      } 
     );
 
   }
@@ -35,9 +40,9 @@ export class HomeComponent implements OnInit {
 
   files = [
     {'name':'webpack', 'rating': 10}, 
-    {'name': 'Angular'}, 
-    {'name': 'Angular 2+'}, 
-    {'name':'react'}
+    {'name': 'Angular' , rating: 10}, 
+    {'name': 'Angular 2+' , rating: 5}, 
+    {'name':'react', rating: 6}
   ] ;
 
   userEmail(email) {

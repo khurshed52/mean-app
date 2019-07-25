@@ -47,3 +47,20 @@
   </div>
 </div>
 <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+<form [formGroup]="testForm" (ngSubmit)="sub()">
+    <input type="text" formControlName="yourName" #yourName>
+    <span class="required" *ngIf="testForm.controls['yourName'].hasError('required') && (testForm.controls['yourName'].dirty || testForm.controls['yourName'].touched)">This field is required</span>
+    <input type="text" formControlName="yourAge" #yourAge>
+    <button type="submit" [disabled]="testForm.pristine || testForm.invalid"> add </button>
+</form>
+
+<div *ngIf="isUserLoggedin; else logout">
+  <h3>welcome to dashboard </h3>
+  <button (click)="loggedOut()"> log Out</button>
+</div>
+
+<ng-template #logout>
+    <button (click)="loggedIn()"> login</button>
+</ng-template>
+

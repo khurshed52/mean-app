@@ -27,6 +27,10 @@ import { AgmCoreModule } from '@agm/core';
 import {MaterialModule} from './material/material.module';
 import { ChartsModule } from 'ng2-charts';
 import { NgChartComponent } from './ng-chart/ng-chart.component';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+import { NgxSpinnerModule } from "ngx-spinner";
+import { NgProgressModule } from 'ngx-progressbar';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +65,9 @@ import { NgChartComponent } from './ng-chart/ng-chart.component';
     LazyLoadImageModule,
     NgxPaginationModule,
     ChartsModule,
+    Ng4LoadingSpinnerModule.forRoot(),
+    NgxSpinnerModule,
+    NgProgressModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDDkpiRnWEuyvar1roCdSb89THM7MnHjRc'
     }),

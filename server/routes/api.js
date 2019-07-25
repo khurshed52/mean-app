@@ -18,7 +18,7 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
     }
 });
 
-const services = [{id:1, name:'sport services 1'}, {id:2, name:'sport services 2'}, {id:3, name:'sport services 3'}, {id:4, name:'sport services 4'}];
+const services = [{id:1, name:'sport services 1'}, {id:2, name:'Issue a Replacement of Sports Activity Licence'}, {id:3, name:'sport services 3'}, {id:4, name:'sport services 4'}];
 router.get('/gas-services', (req, res)=>{
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');  
     res.send(services);
@@ -41,6 +41,19 @@ router.get('/salary', (req, res)=> {
             res.json(salary);
         }
     })
+});
+
+//get api for salary with id
+ 
+router.get('/salary/:id', (req, res)=> {
+    console.log('get salary request with id');
+   Salary.findById(req.params.id).exec(function(err, salary){
+       if (err) {
+           console.log('error with id')
+       }else {
+           res.json(salary)
+       }
+   })
 })
   
 //get api for users

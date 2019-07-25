@@ -12,6 +12,7 @@ export class ParentComponent implements OnInit {
   todo:string = '';
   clickMessage:string = '';
   name:string;
+  age:number;
   email:string;
   message:string; 
   constructor() { 

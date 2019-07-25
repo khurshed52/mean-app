@@ -7,12 +7,16 @@ import * as Material from '@angular/material'
     CommonModule,
     Material.MatFormFieldModule,
     Material.MatInputModule,
-    Material.MatSelectModule
+    Material.MatSelectModule,
+    Material.MatListModule,
+    Material.MatProgressBarModule
   ],
   exports:[
     Material.MatFormFieldModule,
     Material.MatInputModule,
-    Material.MatSelectModule
+    Material.MatSelectModule,
+    Material.MatListModule,
+    Material.MatProgressBarModule
   ]
 })
 export class MaterialModule { }

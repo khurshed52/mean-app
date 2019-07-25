@@ -4,6 +4,8 @@ import { AlbumService } from '../shared/album.service'
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';
+import * as _ from 'lodash';
+
 declare var Swal:any
 @Component({
   selector: 'app-gallery',
@@ -16,6 +18,7 @@ export class GalleryComponent implements OnInit {
   p: number = 1;
   public addGalleryForm:boolean = false;
   addForm:FormGroup;
+  testForm:FormGroup;
   constructor( 
     private _album: AlbumService,
     private fb: FormBuilder,
@@ -25,6 +28,12 @@ export class GalleryComponent implements OnInit {
       title:['', Validators.compose([Validators.required, Validators.pattern(/^.{0,50}$/)])],
       url:['', Validators.compose([Validators.required, Validators.pattern(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/)])]
     });
+
+    this.testForm = this.fb.group({
+      yourName:['', Validators.compose([Validators.required])],
+      yourAge:['', Validators.required],
+    });
+
   }
 
   public galleryTitle:string = 'Welcome to Gallery Page';
@@ -80,6 +89,25 @@ export class GalleryComponent implements OnInit {
       duration: 3000
     });
   }
+
+ public sub():void {
+   console.log(this.testForm.value)
+ }
+
+ isUserLoggedin:boolean = false
+
+ loggedIn(){
+   this.isUserLoggedin = true;
+ }
+
+ loggedOut(){
+   this.isUserLoggedin = false
+ }
+
+public colors = [ "red", "green", "blue"];
+
+public doc = _.join(this.colors, '~');
+
 
 
 }

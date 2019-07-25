@@ -1,5 +1,6 @@
 import { Component, Input, OnInit} from '@angular/core';
 import Darkmode from 'darkmode-js';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,11 @@ import Darkmode from 'darkmode-js';
 export class AppComponent implements OnInit {
   title = 'mean';
   data:string= 'hello parent';
+  loading:any
 
+  constructor(private spinner: NgxSpinnerService){
+   
+  }
   ngOnInit(){
     var options = {
       bottom: '64px', // default: '32px'
@@ -26,5 +31,10 @@ export class AppComponent implements OnInit {
     
     const darkmode = new Darkmode(options);
     darkmode.showWidget();
+
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 2000);
   }
 }

@@ -1,5 +1,5 @@
-<h2> {{sleepingHours}}</h2>
-<div>
+<div class="chart-area">
+<h2 class="text-center"> {{sleepingHours}}</h2>
   <div style="display: block">
     <canvas baseChart
           [datasets]="barChartData"
@@ -9,3 +9,12 @@
           [chartType]="barChartType"></canvas>
   </div>
 </div>
+
+
+<h1> Product list </h1>
+<ul>
+  <li *ngFor="let product of products">
+    <p> {{product.name}}</p>
+    <p> {{product.price}}</p>
+  </li>
+</ul>

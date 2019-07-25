@@ -7,28 +7,33 @@
     <p blueColored> {{i+1}} {{file.name | titlecase}} <span class="badge badge-primary">{{file.rating}}</span></p>
 </div>
 
-<div class="row">
-  <div class="col-4" *ngFor="let user of users | slice:0:5; index as i">
-    <div class="box"> 
-    <span class="badge badge-pill badge-info">{{i+1}}</span>
-    <h3 blueColored> {{user.name}}</h3>
-    <p> {{user.username}}</p>
-    <p> {{user.address.street}}</p>
-    <p> {{user.address.suite}}</p>
-    <p> {{user.address.city}}</p>
-    <p> {{user.address.zipcode}}</p>
-    <p> {{user.address.geo.lat}}</p>
-    <p> {{user.address.geo.lng}}</p>
-    <p> {{user.phone}}</p>
-    <p> {{user.website}}</p>
-    <p> {{user.company.name}}</p>
-    <p> {{user.company.catchPhrase}}</p>
-    <p> {{user.company.bs}}</p>
-    <button class="btn btn-primary" (click)="userEmail(user.email)"> Get User Email</button>
-    <button class="btn btn-primary" (click)="del(user)"> Delete list </button>
+<div *ngIf="loading; else loaded">
+  <img src="https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif">
+</div>
+<ng-template #loaded>
+  <div class="row">
+    <div class="col-4" *ngFor="let user of users | slice:0:5; index as i">
+      <div class="box"> 
+      <span class="badge badge-pill badge-info">{{i+1}}</span>
+      <h3 blueColored> {{user.name}}</h3>
+      <p> {{user.username}}</p>
+      <p> {{user.address.street}}</p>
+      <p> {{user.address.suite}}</p>
+      <p> {{user.address.city}}</p>
+      <p> {{user.address.zipcode}}</p>
+      <p> {{user.address.geo.lat}}</p>
+      <p> {{user.address.geo.lng}}</p>
+      <p> {{user.phone}}</p>
+      <p> {{user.website}}</p>
+      <p> {{user.company.name}}</p>
+      <p> {{user.company.catchPhrase}}</p>
+      <p> {{user.company.bs}}</p>
+      <button class="btn btn-primary" (click)="userEmail(user.email)"> Get User Email</button>
+      <button class="btn btn-primary" (click)="del(user)"> Delete list </button>
+    </div>
   </div>
-</div>
-</div>
+  </div>
+</ng-template>
 
 <div *ngFor="let service of services">
   <p>{{service.id}}</p>
