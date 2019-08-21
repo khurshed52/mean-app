@@ -2,45 +2,13 @@
 <input type="text" [(ngModel)]="hero" *ngIf="parent">
 
 <form (ngSubmit)="onSubmit()" #userForm = "ngForm">
-    value: {{userForm.value | json }}
+   <h1>value: {{userForm.value | json }} </h1>
   <input type="text" [(ngModel)]="name" name="name">
   <input type="text" [(ngModel)]="age" name="age">
+  <input type="text" placeholder="Datepicker" class="form-control" [(ngModel)]="datePick" name="datePick" bsDatepicker>
   <button type="submit">Submit</button>
 </form>
 
-<div class="laptop"> 
-  <ul>
-    <li *ngFor="let laptop of laptops"> 
-      <p> {{laptop.name}}</p>
-      <em> {{laptop.ram}}</em>
-    </li>
-  </ul>
-</div>
-
-<button class="btn btn-primary" (click)="onClickMe()"> click me </button>
-
-<h2> {{clickMessage}}</h2>
-
-<!-- form goes here -->
-<form (ngSubmit)="processForm()">
-
-  <!-- name -->
-  <div class="field">
-    <input type="text" name="name" class="input" placeholder="Your Name" [(ngModel)]="name">
-  </div>
-  <!-- email -->
-  <div class="field">
-    <input type="email" name="email" class="input" placeholder="Your Email" [(ngModel)]="email">
-  </div>
-
-  <!-- message -->
-  <div class="field">
-    <textarea class="textarea" name="message" placeholder="What's on your mind?" [(ngModel)]="message"></textarea>
-  </div>
-
-  <button type="submit" class="button is-danger is-large">Submit</button>
-
-</form>
 
 <h1> {{getTime}}</h1>
 
@@ -52,3 +20,12 @@
 <div class="settingArea"> 
   setting area content will come here 
 </div>
+
+
+<form [formGroup]="dateForm" (ngSubmit)="subForm()">
+    <div class="col-12">
+        <input type="text" placeholder="Datepicker" class="form-control" bsDatepicker [bsConfig]="{ isAnimated: true }" formControlName="date" #date> 
+      </div>
+      <span class="required" *ngIf="dateForm.controls['date'].hasError('required') && (dateForm.controls['date'].dirty || dateForm.controls['date'].touched)">This field is required</span>
+    <button class="btn btn-primary" type="submit" [disabled]="dateForm.pristine || dateForm.invalid"> Get Date</button>
+</form>

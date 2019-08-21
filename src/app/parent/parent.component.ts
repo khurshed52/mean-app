@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { computeStyle } from '@angular/animations/browser/src/util';
 import * as moment from 'moment';
-declare const $:any
+import { FormGroup, FormControl, FormBuilder , Validators} from '@angular/forms';
+declare const $:any;
+declare const Swal:any
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
@@ -15,10 +17,16 @@ export class ParentComponent implements OnInit {
   age:number;
   email:string;
   message:string; 
-  constructor() { 
+  date:object;
+  dateForm:FormGroup;
+  constructor( private fb: FormBuilder) { 
    setInterval(()=>{
      this.getTime =moment().format('h:mm:ss');
-   },1)
+   },1);  
+
+   this.dateForm = this.fb.group({
+    date:['', Validators.compose([Validators.required])],
+   })
   }
 
   ngOnInit() {
@@ -62,6 +70,12 @@ export class ParentComponent implements OnInit {
   public setting():void {
     $('.settingArea').slideToggle();
   }
+
+public subForm() {
+  const data = this.dateForm.value;
+  console.log(data);
+}
   
+
 
 }

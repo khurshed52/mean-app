@@ -12,10 +12,17 @@ declare var Swal:any
 })
 export class TodoComponent implements OnInit {
   salaries: any;
+  loading:boolean = true;
   constructor( private _salary:SalaryService, private router: Router ) { }
 
   ngOnInit() {
-    this._salary.getSalary().subscribe(salary => this.salaries= salary);
+    this._salary.getSalary().subscribe(
+      salary => {
+      console.log(salary);
+      this.salaries = salary;
+      this.loading = false
+    });
+
   }
 
   getSalary(id):void {
@@ -24,7 +31,6 @@ export class TodoComponent implements OnInit {
 
   lat: number = 26.507400;
   lng: number = 83.782310;
-
 
 
   albums = [

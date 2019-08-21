@@ -1,3 +1,22 @@
 .required {
     color: red
 }
+
+.item.slide-banner div img {
+    height: 600px;
+    position: relative;
+    width: 100%;
+}
+
+.item.slide-banner div h2 {
+    position: absolute;
+    bottom: 0;
+    background: #000000a8;
+    width: 100%;
+    padding: 1em;
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+

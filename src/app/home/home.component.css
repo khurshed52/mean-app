@@ -15,3 +15,7 @@ h1 {
 img {
     width: 100%;
 }
+
+.is-list {
+   border-bottom: 5px solid red;
+}

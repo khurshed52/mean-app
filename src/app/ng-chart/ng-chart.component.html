@@ -18,3 +18,9 @@
     <p> {{product.price}}</p>
   </li>
 </ul>
+
+<p [ngClass]="{color:myPass==='hello'}"> Enter Password </p>
+
+<input type="password" [(ngModel)]="myPass"/>
+
+<h1>{{myPass}}</h1>

@@ -23,16 +23,19 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/flexcarouseljs/dist/flexCarousel.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css",
               "node_modules/reset-css/reset.css",
               "node_modules/sweetalert2/dist/sweetalert2.min.css",
               "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
               "node_modules/owl.carousel/dist/assets/owl.carousel.css",
+              "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "src/styles.css"
             ],
             "scripts": [
                "node_modules/jquery/dist/jquery.min.js",
+               "node_modules/flexcarouseljs/dist/flexCarousel.min.js",
                "node_modules/sweetalert2/dist/sweetalert2.min.js",
                "node_modules/bootstrap/dist/js/bootstrap.js",
                "node_modules/owl.carousel/dist/owl.carousel.js"

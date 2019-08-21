@@ -81,6 +81,6 @@ export class HomeComponent implements OnInit {
   public carList = ['bmw', 'ferrari', 'maruti'];
   public bikeList = ['honda', 'yamaha', 'suzuki'];
 
-public all = [...this.carList, ...this.bikeList].join(' ');
+public all = [...this.carList, ...this.bikeList].join(' ')
 
 }

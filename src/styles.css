@@ -28,7 +28,6 @@ body {
     top: -27%;
 }
 
-
 .owl-next {
     right: 40%;
 }
@@ -164,3 +163,45 @@ body {
   .darkmode-layer {
       mix-blend-mode: inherit !important;
   }
+
+  .transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+  }
+  
+  html.is-animating .transition-fade {
+    opacity: 0;
+  }
+
+.owl-carousel {
+      direction: ltr
+  }
+
+.owl-theme .owl-dots .owl-dot {
+    display: block !important;
+    margin-bottom: 0.5em;
+    width: 32px;
+}
+.owl-theme .owl-nav.disabled + .owl-dots {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+}
+button.owl-dot.active {
+    border: 1px solid #fff;
+    border-radius: 13px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #337985 !important;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+    margin: 5px 10px;
+}
+
+.owl-dots {
+    position: absolute;
+    top: 50%;
+    left: 2%;
+}

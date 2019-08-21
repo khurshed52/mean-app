@@ -8,4 +8,6 @@ const userSchema = new Schema({
     phone:Number,
   }, {collection: 'userdata'});
 
-  module.exports = mongoose.model('user', userSchema);
+  let user = mongoose.model('user', userSchema)
+  //mode export here 
+  module.exports = user

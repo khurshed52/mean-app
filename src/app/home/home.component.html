@@ -12,7 +12,7 @@
 </div>
 <ng-template #loaded>
   <div class="row">
-    <div class="col-4" *ngFor="let user of users | slice:0:5; index as i">
+    <div class="col-4" *ngFor="let user of users | slice:0:5; index as i; first as isFirst" [class.is-list]="isFirst">
       <div class="box"> 
       <span class="badge badge-pill badge-info">{{i+1}}</span>
       <h3 blueColored> {{user.name}}</h3>

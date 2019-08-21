@@ -30,7 +30,9 @@ import { NgChartComponent } from './ng-chart/ng-chart.component';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { NgProgressModule } from 'ngx-progressbar';
-
+import { EllipsisModule } from 'ngx-ellipsis';
+import { BsDatepickerModule } from 'ngx-bootstrap';
+import { OwlModule } from 'ngx-owl-carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,12 +64,15 @@ import { NgProgressModule } from 'ngx-progressbar';
     MatInputModule,
     MatFormFieldModule,
     MaterialModule,
+    OwlModule,
     LazyLoadImageModule,
     NgxPaginationModule,
     ChartsModule,
     Ng4LoadingSpinnerModule.forRoot(),
+    BsDatepickerModule.forRoot(),
     NgxSpinnerModule,
     NgProgressModule,
+    EllipsisModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDDkpiRnWEuyvar1roCdSb89THM7MnHjRc'
     }),

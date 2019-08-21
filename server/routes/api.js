@@ -18,7 +18,13 @@ mongoose.connect(db,{ useNewUrlParser: true , dbName: 'users'}, function(err){
     }
 });
 
-const services = [{id:1, name:'sport services 1'}, {id:2, name:'Issue a Replacement of Sports Activity Licence'}, {id:3, name:'sport services 3'}, {id:4, name:'sport services 4'}];
+const services = [
+    {id:1, name:'Registration of sports institutions'}, 
+    {id:2, name:'Issue a Replacement of Sports Activity Licence'},
+    {id:3, name:'Sport services 3'}, 
+    {id:4, name:'Sport services 4'}
+];
+
 router.get('/gas-services', (req, res)=>{
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');  
     res.send(services);
@@ -28,6 +34,11 @@ router.get('/gas-services/:id', function (req, res) {
     const service = services.find(c=> c.id === parseInt(req.params.id));
     if(!service) res.status(404).send('error');
     res.send(service);
+  });
+
+  router.get('/emp' , (req, res)=> {
+      let data = require('../../data/employe.json');
+      res.send(data);
   });
 
 //get api for salary

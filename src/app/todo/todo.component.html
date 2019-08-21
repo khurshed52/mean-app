@@ -1,13 +1,21 @@
-<ul>
-  <li *ngFor="let salary of salaries">
-    <p>{{salary._id}} </p>
-    <p>{{salary.name}} </p>
-    <p>{{salary.salary}} </p>
-    <button class="btn btn-primary" (click)="getSalary(salary._id)"> Get id </button>
-  </li>
-</ul>
+<div *ngIf="loading; else loaded"> 
+    loading data ...
+</div>
+
+<ng-template #loaded>
+  <ul>
+    <li *ngFor="let salary of salaries">
+      <p>{{salary._id}} </p>
+      <p>{{salary.name}} </p>
+      <p>{{salary.salary}} </p>
+      <button class="btn btn-primary" (click)="getSalary(salary._id)"> Get id </button>
+    </li>
+  </ul>
+</ng-template>
+
 
 <h1> {{lat}}</h1>
+
 
 <div *ngFor="let album of albums">
   <h1> {{album.name}}</h1>

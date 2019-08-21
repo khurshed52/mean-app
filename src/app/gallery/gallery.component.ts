@@ -6,7 +6,8 @@ import { MatSnackBar } from '@angular/material';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
 
-declare var Swal:any
+declare var Swal:any;
+declare var $:any
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -14,33 +15,41 @@ declare var Swal:any
   providers:[AlbumService]
 })
 export class GalleryComponent implements OnInit {
+  public data:string = "we are gonna change data here";
   albums:any;
   p: number = 1;
   public addGalleryForm:boolean = false;
   addForm:FormGroup;
   testForm:FormGroup;
-  constructor( 
+  public galleryTitle:string = 'Welcome to Gallery Page';
+  constructor(
     private _album: AlbumService,
     private fb: FormBuilder,
     private snack : MatSnackBar
-  ) { 
+  ) {
     this.addForm = this.fb.group({
       title:['', Validators.compose([Validators.required, Validators.pattern(/^.{0,50}$/)])],
       url:['', Validators.compose([Validators.required, Validators.pattern(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/)])]
-    });
+    }); 
 
+  }
+
+ 
+  ngOnInit() {
+    //test reactive form
     this.testForm = this.fb.group({
       yourName:['', Validators.compose([Validators.required])],
       yourAge:['', Validators.required],
     });
-
-  }
-
-  public galleryTitle:string = 'Welcome to Gallery Page';
-  ngOnInit() {
     this._album.getAlbums().subscribe(
       album => this.albums = album,
     );
+    //slider
+    $('.slider-banner').flexCarousel({
+      autoplay: true,
+      arrows:false,
+      autoplaySpeed: 5000
+   });
   }
 
   defaultImage = 'https://cdn-images-1.medium.com/max/1600/1*9EBHIOzhE1XfMYoKz1JcsQ.gif';
@@ -77,7 +86,7 @@ export class GalleryComponent implements OnInit {
   };
 
   //show gallery add form
-  showForm():void  {
+  showForm(): void  {
     this.addGalleryForm = !this.addGalleryForm;
     //this.addGalleryForm = true;
   }
@@ -108,6 +117,15 @@ public colors = [ "red", "green", "blue"];
 
 public doc = _.join(this.colors, '~');
 
+search(obj) {
+  console.log(obj.value)
+}
 
+mySlideImages = [
+ { url:'https://image.shutterstock.com/image-photo/colorful-fo-election-vote-hand-600w-794518426.jpg', alt: 'image 1', text:'first text here'},
+ { url:'https://image.shutterstock.com/image-photo/many-thumbs-idea-600w-229841500.jpg', alt: 'image 2', text:'second text here'},
+ { url:'https://cdn.pixabay.com/photo/2018/06/15/08/30/african-3476371_1280.jpg', alt: 'image 3', text:'third text here'}
+] 
+mySlideOptions={items: 1, dots: true, nav: false, autoplay: true, smartSpeed:1000, autoplayTimeout:4000, loop: true};
 
 }
